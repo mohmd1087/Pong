@@ -1,6 +1,4 @@
 using System;
-using TMPro;
-
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,7 +6,7 @@ public class ScoreZone : MonoBehaviour
 {
     public GameObject ballSpawner;
     public GameObject gameManager;
-    public TextMeshProUGUI scoreTM;
+  
 
 
     private int _playerScore;
@@ -29,16 +27,17 @@ public class ScoreZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("Ball"))
-            return;
-        PlayerScored();
-        Destroy(other.gameObject);
+            if (!other.gameObject.CompareTag("Ball"))
+                return;
+            PlayerScored();
+            Destroy(other.gameObject);
+        
     }
 
     private void PlayerScored()
     {
         String playerTag = tag;
-         Debug.Log($"{playerTag} scores, {playerTag} has {++_playerScore} points");
+        Debug.Log($"{playerTag} scores, {playerTag} has {++_playerScore} points");
         ++_playerScore;
 
 
@@ -52,7 +51,7 @@ public class ScoreZone : MonoBehaviour
             Debug.Log($"{playerTag} has WON!! Restarting the game...");
             gameManager.GetComponent<GameManager>().PlayerWon(tag);
         }
-        PaddleController.ResetTimesHit();
+        PaddleController.ResetHitCount();
     }
     
 

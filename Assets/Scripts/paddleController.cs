@@ -10,16 +10,17 @@ public class PaddleController : MonoBehaviour
     private Rigidbody _rigidbody;
     private string _playerAxis;
 
-    private static int _timesHit;
-    private const float MaxAngle = 60f;
+    private static int _hitCount;
+    private const float MaxAngle = 50f;
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         _rigidbody = GetComponent<Rigidbody>();
-        _playerAxis = CompareTag("Player1") ? "P1Vertical" : "P2Vertical";
+        
+        _playerAxis = CompareTag("Player1") ? "Vertical" : "P2Vertical";
 
-        ResetTimesHit();
+        ResetHitCount();
     }
 
     private void FixedUpdate()
@@ -34,27 +35,27 @@ public class PaddleController : MonoBehaviour
             return;
 
         Bounds bounds = GetComponent<BoxCollider>().bounds;
-        Rigidbody ballRigidBody = collision.gameObject.GetComponent<Rigidbody>();
+        Rigidbody ballrb = collision.gameObject.GetComponent<Rigidbody>();
         Vector3 ballVelocity = collision.gameObject.GetComponent<PongBall>().VelocityBeforeCollision();
         
         
-        float magnitude = ballVelocity.magnitude * (1f + _timesHit/100f);
+        float magnitude = ballVelocity.magnitude * (1f + _hitCount/80f);
         float collisionTransformY = Mathf.Clamp(collision.transform.position.y, bounds.min.y, bounds.max.y);
         
         float rotationScaleY = (2f * (collisionTransformY - bounds.min.y) / bounds.size.y) - 1f;
         
         if (ballVelocity.x > 0f)
-            ballRigidBody.velocity = Quaternion.Euler(0f, 0f, rotationScaleY * -MaxAngle) * Vector3.left * magnitude;
+            ballrb.velocity = Quaternion.Euler(0f, 0f, rotationScaleY * -MaxAngle) * Vector3.left * magnitude;
         else
-            ballRigidBody.velocity = Quaternion.Euler(0f, 0f, rotationScaleY * MaxAngle) * Vector3.right * magnitude;
+            ballrb.velocity = Quaternion.Euler(0f, 0f, rotationScaleY * MaxAngle) * Vector3.right * magnitude;
         
-        _timesHit++;
+        _hitCount++;
 
   
     }
     
-    public static void ResetTimesHit()
+    public static void ResetHitCount()
     {
-        _timesHit = 0;
+        _hitCount = 0;
     }
 }

@@ -1,10 +1,9 @@
-
 using UnityEngine;
 
 public class PongBorder : MonoBehaviour
 {
     public GameObject ballSpawner;
-
+    
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -23,7 +22,7 @@ public class PongBorder : MonoBehaviour
         {
             Destroy(collisionInfo.gameObject);
             ballSpawner.GetComponent<BallSpawnerController>().NextServe();
-            PaddleController.ResetTimesHit();
+            PaddleController.ResetHitCount();
         }
     }
 }
