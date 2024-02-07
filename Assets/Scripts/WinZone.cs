@@ -59,7 +59,7 @@ public class ScoreZone : MonoBehaviour
             _score1 = _playerScore;
             Debug.Log(message:$"{_score}{_score1}");
             Debug.Log($"RIGHT PADDLE SCORES");
-            Debug.Log(message:$"The score is:" +
+            Debug.Log(message:$"The score is " +
                               $"{_score} : {_score1}");
         }
         //Debug.Log($"{playerTag} scores, {playerTag} has {_playerScore} points");
