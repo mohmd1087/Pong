@@ -9,6 +9,8 @@ TagManager:
   - Ball
   - Player1
   - Player2
+  - leftPaddle
+  - rightPaddle
   layers:
   - Default
   - TransparentFX

@@ -332,6 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1ScoreZone: {fileID: 138639929}
   p2ScoreZone: {fileID: 977546198}
+  ballSpawner: {fileID: 1557470406}
 --- !u!4 &621128807
 Transform:
   m_ObjectHideFlags: 0
