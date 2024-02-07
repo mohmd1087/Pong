@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject p1ScoreZone;
     public GameObject p2ScoreZone;
+    public GameObject ballSpawner;
 
     private void Start()
     {
@@ -11,7 +12,9 @@ public class GameManager : MonoBehaviour
 
     public void PlayerWon(string winningTag)
     {
-        Debug.Log(message:$"{winningTag} has won!"); 
+        Debug.Log(message:$"Game Over, {winningTag} has won!"); 
+        RestartGame();
+        ballSpawner.GetComponent<BallSpawnerController>().NextServe();
 
     }
     

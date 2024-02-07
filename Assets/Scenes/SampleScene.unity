@@ -263,28 +263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 4459506161941666423, guid: 470a75dc43dedfb46957983ceab2dbec, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459506161941666423, guid: 470a75dc43dedfb46957983ceab2dbec, type: 3}
-      propertyPath: m_TagString
-      value: Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 6535976887112762343, guid: 470a75dc43dedfb46957983ceab2dbec, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: bc316f1c66a1fd94994da46f4e2cd62c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4459506161941666423, guid: 470a75dc43dedfb46957983ceab2dbec, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1421604286}
-    - targetCorrespondingSourceObject: {fileID: 4459506161941666423, guid: 470a75dc43dedfb46957983ceab2dbec, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1421604291}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 470a75dc43dedfb46957983ceab2dbec, type: 3}
 --- !u!1 &601972169
 GameObject:
@@ -602,8 +584,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.0021160715, g: 0.2629982, b: 0.67295593, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -653,7 +635,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: -2.7, y: 2.3, z: 60}
+  m_LocalPosition: {x: -2.7, y: 0.5, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -807,56 +789,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 138639930}
   m_SourcePrefab: {fileID: 100100000, guid: dd4656f81caf8c94a9ea115dde15267b, type: 3}
---- !u!1 &1421604285 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4459506161941666423, guid: 470a75dc43dedfb46957983ceab2dbec, type: 3}
-  m_PrefabInstance: {fileID: 581142768}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1421604286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1421604285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fae6f424a2cf9174183b7e2b7e5c3e75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingSpeed: 15
 --- !u!4 &1421604290 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2114632843613532842, guid: 470a75dc43dedfb46957983ceab2dbec, type: 3}
   m_PrefabInstance: {fileID: 581142768}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &1421604291
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1421604285}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 120
-  m_CollisionDetection: 1
 --- !u!1 &1555781403 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7558515716417086059, guid: 4197ab741ee5a064889180c7ba16bdea, type: 3}
@@ -909,7 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeec5cfc737adbd42b047b8b18767ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 1421604285}
+  ballPrefab: {fileID: 4459506161941666423, guid: 470a75dc43dedfb46957983ceab2dbec, type: 3}
 --- !u!4 &1557470408
 Transform:
   m_ObjectHideFlags: 0

@@ -3,7 +3,9 @@ guid: 6c4a538294742924fa5184b326ae4f0d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - p1ScoreZone: {fileID: 5344623937071478999, guid: dd4656f81caf8c94a9ea115dde15267b, type: 3}
+  - p2ScoreZone: {fileID: 5344623937071478999, guid: dd4656f81caf8c94a9ea115dde15267b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
