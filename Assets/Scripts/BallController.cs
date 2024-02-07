@@ -1,6 +1,10 @@
 
 using UnityEngine;
 
+// References:
+// https://forum.unity.com/threads/what-would-happen-in-practical-terms-when-a-gameobject-with-a-rigidbody-is-moved-using-update.1183849/
+// https://stackoverflow.com/questions/67635398/unity-vector3-issues
+
 public class PongBall : MonoBehaviour
 {
     public float startingSpeed;

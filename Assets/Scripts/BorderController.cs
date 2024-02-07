@@ -1,5 +1,9 @@
 using UnityEngine;
 
+//References:
+// https://gamedev.stackexchange.com/questions/203052/changing-falling-behavior-of-my-object-after-collision-to-go-gradually-down-and
+// https://forum.unity.com/threads/fast-moving-object-collision-with-controller-object.1378386/
+
 public class PongBorder : MonoBehaviour
 {
     public GameObject ballSpawner;

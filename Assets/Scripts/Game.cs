@@ -1,5 +1,8 @@
 
 using UnityEngine;
+
+// References:
+// https://gamedev.stackexchange.com/questions/206926/the-random-range-function-isnt-activating-when-i-call-it-how-do-i-get-the-func
 public class GameManager : MonoBehaviour
 {
     public GameObject p1ScoreZone;

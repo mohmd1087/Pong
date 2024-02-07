@@ -2,6 +2,10 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+//References:
+// https://gamedev.stackexchange.com/questions/203052/changing-falling-behavior-of-my-object-after-collision-to-go-gradually-down-and
+// https://forum.unity.com/threads/fast-moving-object-collision-with-controller-object.1378386/
+
 public class ScoreZone : MonoBehaviour
 {
     public GameObject ballSpawner;
