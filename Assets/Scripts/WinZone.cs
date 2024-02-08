@@ -28,7 +28,7 @@ public class ScoreZone : MonoBehaviour
     {
         String playerTag = tag;
         _playerScore = 0;
-        InitServeDirection();
+  
         Debug.Log(message:$"{tag} = {_playerScore}");
     }
 
@@ -92,8 +92,5 @@ public class ScoreZone : MonoBehaviour
         return _serveRight;
     }
     
-    private static void InitServeDirection()
-    {
-        _serveRight = Random.Range(0, 2) == 1;
-    }
+
 }
