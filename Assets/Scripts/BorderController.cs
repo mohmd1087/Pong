@@ -7,6 +7,15 @@ using UnityEngine;
 public class PongBorder : MonoBehaviour
 {
     public GameObject ballSpawner;
+    public AudioClip ballSound;
+    
+    private AudioSource clip;
+    
+    private void Start()
+    {
+        clip = GetComponent<AudioSource>();
+    }
+
     
 
     private void OnCollisionEnter(Collision collision)
@@ -15,6 +24,7 @@ public class PongBorder : MonoBehaviour
             return;
         Vector3 velocity = collision.gameObject.GetComponent<PongBall>().VelocityBeforeCollision();
         collision.rigidbody.velocity = new Vector3(velocity.x, velocity.y * -1, velocity.z);
+        PlayWallHitSound();
         
     }
 
@@ -28,5 +38,11 @@ public class PongBorder : MonoBehaviour
             ballSpawner.GetComponent<BallSpawnerController>().NextServe();
             PaddleController.ResetHitCount();
         }
+    }
+    
+    
+    private void PlayWallHitSound()
+    {
+        clip.PlayOneShot(ballSound);
     }
 }

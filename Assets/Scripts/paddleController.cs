@@ -5,10 +5,11 @@ using UnityEngine;
 public class PaddleController : MonoBehaviour
 {
     public float unitsPerSecond;
-
-
+    public AudioClip ballSound;
+    private AudioSource _source;
     private Rigidbody _rigidbody;
     private string _playerAxis;
+    private bool _isShrunken;
 
     private static int _hitCount;
     private const float MaxAngle = 50f;
@@ -19,6 +20,7 @@ public class PaddleController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         
         _playerAxis = CompareTag("Player1") ? "Vertical" : "P2Vertical";
+        _source = GetComponent<AudioSource>();
 
         ResetHitCount();
     }
@@ -53,8 +55,30 @@ public class PaddleController : MonoBehaviour
             ballrb.velocity = Quaternion.Euler(0f, 0f, rotationScaleY * MaxAngle) * Vector3.right * magnitude;
         
         _hitCount++;
+        PlayBallSound();
+        if (_isShrunken)
+            Grow();
 
   
+    }
+    private void PlayBallSound()
+    {
+        _source.outputAudioMixerGroup.audioMixer.SetFloat("Paddle", (_hitCount/10f));
+        _source.PlayOneShot(ballSound);
+    }
+    public void Shrink()
+    {
+        // Debug.Log("shrinking");
+        //_source.PlayOneShot(shrinkSound);
+        _isShrunken = true;
+        transform.localScale = new Vector3(1f, 2.5f, 1f);
+    }
+    
+    private void Grow()
+    {
+        // Debug.Log("growing");
+        _isShrunken = false;
+        transform.localScale = new Vector3(1f, 5f, 1f);
     }
     
     public static void ResetHitCount()
