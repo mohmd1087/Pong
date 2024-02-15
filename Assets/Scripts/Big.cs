@@ -1,13 +1,12 @@
-
 using UnityEngine;
 
 public class Big : MonoBehaviour
-{  public AudioClip reverseClip;
-
-    private AudioSource _source;
+{ // public AudioClip reverseClip;
+//
+//     private AudioSource _source;
     private void Start()
     {
-        _source = GetComponent<AudioSource>();
+        // _source = GetComponent<AudioSource>();
         Reposition();
     }
 
@@ -19,7 +18,7 @@ public class Big : MonoBehaviour
         Vector3 ballVelocity = other.GetComponent<Rigidbody>().velocity;
         other.GetComponent<Rigidbody>().velocity = new Vector3(ballVelocity.x, -ballVelocity.y, 0f);
         
-        _source.PlayOneShot(reverseClip);
+        // _source.PlayOneShot(reverseClip);
         
         Reposition();
     }

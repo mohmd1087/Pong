@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject ballSpawner;
     public TextMeshProUGUI winText;
 
-    private void Start()
+    private void Start() 
     {
     }
 

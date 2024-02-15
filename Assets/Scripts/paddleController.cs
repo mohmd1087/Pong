@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 
@@ -45,7 +44,7 @@ public class PaddleController : MonoBehaviour
         float collisionTransformY = Mathf.Clamp(collision.transform.position.y, bounds.min.y, bounds.max.y);
         
         float rotationScaleY = (2f * (collisionTransformY - bounds.min.y) / bounds.size.y) - 1f;
- //float anglePercent = (bounds - collision.transform.position.x) / 2.5f;
+            //float anglePercent = (bounds - collision.transform.position.x) / 2.5f;
             //Vector3 newVec = Quaternion.Euler(0f, -anglePercent * 45f, 0f) * Vector3.forward;
             //Debug.DrawLine(transform.position, transform.position + newVec * 30f, Color.red);
         
@@ -63,7 +62,7 @@ public class PaddleController : MonoBehaviour
     }
     private void PlayBallSound()
     {
-        _source.outputAudioMixerGroup.audioMixer.SetFloat("Paddle", (_hitCount/10f));
+        _source.outputAudioMixerGroup.audioMixer.SetFloat("Paddles", (_hitCount/10f));
         _source.PlayOneShot(ballSound);
     }
     public void Shrink()

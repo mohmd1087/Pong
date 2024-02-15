@@ -9,11 +9,11 @@ public class PongBorder : MonoBehaviour
     public GameObject ballSpawner;
     public AudioClip ballSound;
     
-    private AudioSource clip;
+    private AudioSource _clip;
     
     private void Start()
     {
-        clip = GetComponent<AudioSource>();
+        _clip = GetComponent<AudioSource>();
     }
 
     
@@ -43,6 +43,6 @@ public class PongBorder : MonoBehaviour
     
     private void PlayWallHitSound()
     {
-        clip.PlayOneShot(ballSound);
+        _clip.PlayOneShot(ballSound);
     }
 }
