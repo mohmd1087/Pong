@@ -57,7 +57,7 @@ public class ScoreZone : MonoBehaviour
         {
             scoreTM.text = $"{_playerScore}";
             LeanTween.rotate( scoreTM.rectTransform, 360f, 0.5f).setEase(LeanTweenType.easeOutElastic);
-           // LeanTween.alpha(scoreTM.rectTransform, 1f, 1f).setEase(LeanTweenType.easeInCirc);
+           
         }
     
     

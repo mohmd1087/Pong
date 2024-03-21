@@ -4,10 +4,11 @@ public class Shrink : MonoBehaviour
 { 
     public GameObject p1Paddle;
     public GameObject p2Paddle;
+    private float rotationSpeed = 500f;
 
     private void Start()
     {
-        Reposition();
+        newPosition();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,10 +25,16 @@ public class Shrink : MonoBehaviour
             p2Paddle.gameObject.GetComponent<PaddleController>().Shrink();
         }
         
-        Reposition();
+        newPosition();
+    }
+    
+    private void Update()
+    {
+        Transform transform = GetComponent<Transform>();
+        transform.Rotate(Vector3.right * (rotationSpeed * Time.deltaTime));
     }
 
-    private void Reposition()
+    private void newPosition()
     {
         gameObject.SetActive(true);
         transform.position = new Vector3(Random.Range(-8f, 8f), Random.Range(-5f, 5f), 0f);
